@@ -13,5 +13,8 @@
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.12.2",
     "web-vitals": "^1.1.1"
-  }
+  },
+  "scripts": {
+    "start": "node index.js"
+ }
 }

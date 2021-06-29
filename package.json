@@ -1,0 +1,17 @@
+{
+  "name": "twitter-clone",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@testing-library/jest-dom": "^5.11.10",
+    "@testing-library/react": "^11.2.5",
+    "@testing-library/user-event": "^12.8.3",
+    "apollo-server": "^2.21.2",
+    "bcrypt": "^5.0.1",
+    "dotenv": "^10.0.0",
+    "graphql": "^15.5.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.12.2",
+    "web-vitals": "^1.1.1"
+  }
+}

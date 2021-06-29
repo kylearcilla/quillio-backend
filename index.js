@@ -8,7 +8,7 @@ const resolvers = require('./gql/resolvers')
 const uri = process.env.DATABASE_URI;
 
 // host independently configures port in deployment environment
-const PORT = process.env.port || 5000;
+const port = process.env.PORT || 5000;
 
 // GraphQL Schema, Resolvers, Middleware
 const server = new ApolloServer({
@@ -21,7 +21,7 @@ const server = new ApolloServer({
 mongoose.connect(uri, { useNewUrlParser: true })
     .then(() => {
         console.log('OK');
-        return server.listen({ port: PORT })
+        return server.listen({ port: port })
     })
     .then(res => {
         console.log(`Server running at ${res.url}`)

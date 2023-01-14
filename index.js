@@ -7,21 +7,16 @@ const resolvers = require('./gql/resolvers')
 
 const uri = process.env.DATABASE_URI;
 
-// host independently configures port in deployment environment
-const port = process.env.PORT || 5000;
-
-// GraphQL Schema, Resolvers, Middleware
 const server = new ApolloServer({
     typeDefs,
     resolvers,
     context: ({ req }) => ({ req })
 });
 
-// connect to DB + jumpstart server
 mongoose.connect(uri, { useNewUrlParser: true })
     .then(() => {
         console.log('OK');
-        return server.listen({ port: port })
+        return server.listen({ port: process.env.PORT || 3001 })
     })
     .then(res => {
         console.log(`Server running at ${res.url}`)
@@ -29,6 +24,3 @@ mongoose.connect(uri, { useNewUrlParser: true })
     .catch(err => {
         console.error(err)
     })
-
-
-

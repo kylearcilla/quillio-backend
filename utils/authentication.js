@@ -3,7 +3,6 @@ const jwt = require('jsonwebtoken');
 
 const JWT_KEY = process.env.JWT_KEY;
 
-// sidfosij
 const verifyTokenFromHeader = (context) => {
     const authHeader = context.req.headers.authorization;
     if (!authHeader) {

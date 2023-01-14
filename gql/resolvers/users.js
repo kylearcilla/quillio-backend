@@ -33,19 +33,15 @@ async function removeElementsFromCollection(type, itemsToRemove, user, collectio
     return;
 }
 async function checkForDeletedAndRemove(type, user, collection) {
-    if (collection.length === 0) {
-        return;
-    }
-    const itemsToRemove = [];
+    if (collection.length === 0) return;
 
+    const itemsToRemove = [];
     for (let element in collection) {
         const doesExist = await User.exists({ _id: element.id });
         !doesExist && itemsToRemove.push(element.id);
     }
 
-    if (itemsToRemove.length === 0) {
-        return;
-    }
+    if (itemsToRemove.length === 0) return;
 
     await removeElementsFromCollection(type, itemsToRemove, user, collection);
     return;
